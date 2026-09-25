@@ -1,0 +1,519 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background: #fff;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+    z-index: 10;
+
+    animation: slideDown 1s ease;
+}
+
+.logo img {
+    width: 140px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.logo img:hover {
+    transform: scale(1.08);
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+header ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+header ul li a:hover {
+    color: #ffb3b3;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    height: 100vh;
+    width: 100%;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.55)
+        ),
+        url("../img/bg.png");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.hero-content {
+    margin-top: 50px;
+}
+
+.hero p {
+    color: white;
+    font-size: 42px;
+    font-weight: bold;
+
+    margin-bottom: 30px;
+
+    text-shadow: 2px 3px 10px black;
+
+    animation: fadeUp 1.2s ease;
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-box {
+    width: 650px;
+    max-width: 90%;
+
+    height: 60px;
+
+    background: white;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 5px 10px;
+
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+
+    animation: searchAppear 1.5s ease;
+}
+
+.search-box span {
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.search-box input {
+    flex: 1;
+
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+.search-box button {
+    height: 48px;
+
+    padding: 0 22px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #e23744;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    background: #c91f2c;
+    transform: scale(1.05);
+}
+
+
+/* ================= FOOD SECTION ================= */
+
+.food-section {
+    padding: 80px 7%;
+
+    background: #fff;
+}
+
+
+/* Section heading */
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+.section-heading h1 {
+    font-size: 36px;
+
+    color: #222;
+
+    margin-bottom: 12px;
+}
+
+.section-heading p {
+    color: #777;
+
+    font-size: 17px;
+}
+
+
+/* ================= CATEGORIES ================= */
+
+.categories {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 80px;
+}
+
+.category-card {
+    width: 180px;
+
+    padding: 25px 15px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    background: white;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow: 0 10px 25px rgba(226, 55, 68, 0.2);
+}
+
+.category-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.category-card h3 {
+    color: #222;
+
+    margin-bottom: 7px;
+}
+
+.category-card p {
+    color: #888;
+
+    font-size: 14px;
+}
+
+
+/* ================= RESTAURANTS ================= */
+
+.restaurant-section h2 {
+    font-size: 30px;
+
+    margin-bottom: 30px;
+
+    color: #222;
+}
+
+.restaurant-container {
+    display: flex;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+.restaurant-card {
+    width: 31%;
+
+    min-width: 280px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Restaurant images */
+
+.restaurant-image {
+    height: 190px;
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+}
+
+
+/*
+   These use gradient backgrounds so the cards
+   still look good even without extra image files.
+*/
+
+.pizza-image {
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.3)
+        ),
+        url("../img/pizza.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.burger-image {
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.3)
+        ),
+        url("../img/burger.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.indian-image {
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.3)
+        ),
+        url("../img/indian.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Discount label */
+
+.restaurant-image span {
+    position: absolute;
+
+    bottom: 10px;
+    left: 10px;
+
+    background: #e23744;
+
+    color: white;
+
+    padding: 6px 10px;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* Restaurant information */
+
+.restaurant-info {
+    padding: 18px;
+}
+
+.restaurant-info h3 {
+    font-size: 20px;
+
+    margin-bottom: 8px;
+
+    color: #222;
+}
+
+.restaurant-info p {
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+}
+
+.rating {
+    display: inline-block;
+
+    background: #267e3e;
+
+    color: white;
+
+    padding: 4px 8px;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+}
+
+.delivery {
+    color: #555 !important;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    height: 70px;
+
+    background: #b71c1c;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 14px;
+}
+
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes slideDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes searchAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 800px) {
+
+    header {
+        padding: 0 20px;
+    }
+
+    header ul {
+        gap: 12px;
+    }
+
+    header ul li a {
+        font-size: 12px;
+    }
+
+    .logo img {
+        width: 110px;
+    }
+
+    .hero p {
+        font-size: 28px;
+    }
+
+    .search-box {
+        height: 55px;
+    }
+
+    .search-box button {
+        padding: 0 15px;
+    }
+
+    .restaurant-card {
+        width: 100%;
+    }
+
+}
+
